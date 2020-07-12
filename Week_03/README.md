@@ -6,7 +6,6 @@ public void recur(int level, param){
     if (level > MAX_LEVEL) {
 	// process result and return 处理结果
         return;
-
     }
 	
     // process current logic 处理当前层程序
