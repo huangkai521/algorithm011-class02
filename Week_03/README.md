@@ -4,7 +4,7 @@
 public void recur(int level, param){
     // terminator 递归终止条件
     if (level > MAX_LEVEL) {
-	 	// process result and return 处理结果
+	// process result and return 处理结果
         return;
 
     }
