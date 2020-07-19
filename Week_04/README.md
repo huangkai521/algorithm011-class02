@@ -3,7 +3,7 @@
 从根节点点一直往深处走，走不动就返回选择另一条分支往深处走，直到所有的节点遍历完。
 #### 树的DFS模板
 ```java
-	public class TreeNode {
+    public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -36,15 +36,15 @@
 ```java
 Set<Integer> visited = new HashSet<Integer>();
 void dfs(Node node, Set<Integer> visited){
-	if(!visited.contains(node.val)){
-		visited.add(node);
-	}
-	// process current level
-	for(Node child : node.children){
-		if(!visited.contains(child.val)){
-			dfs(child, visited);
-		}
-	}
+    if(!visited.contains(node.val)){
+        visited.add(node);
+    }
+    // process current level
+    for(Node child : node.children){
+       if(!visited.contains(child.val)){
+         dfs(child, visited);
+       }
+    }
 }
 ```
 ----
@@ -58,8 +58,8 @@ public class TreeNode {
     TreeNode left;
     TreeNode right;
     TreeNode(int x) {
-		val = x;
- 	}
+	val = x;
+    }
 }
 
 public List<List<Integer>> levelOrder(TreeNode root) {
@@ -93,17 +93,17 @@ Set<Integer> visited = new HashSet<Integer>();
 public void bfs(Node root) {
     Queue<Node> nodes = new LinkedList<>();
     nodes.offer(root);
-	visited.add(root);
+    visited.add(root);
     while (!nodes.isEmpty()) {
         int size = nodes.size();
         for (int i = 0; i < size; i++) {
             Node node = nodes.poll();
             for(Node child : node.children){
-				if(!visited.contains(child.val)){
-					visited.add(child);
-					nodes.offer(child);
-				}
-			}
+		if(!visited.contains(child.val)){
+			visited.add(child);
+			nodes.offer(child);
+	        }
+	    }
         }
     }
 }
