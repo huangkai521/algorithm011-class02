@@ -18,7 +18,7 @@ class Solution {
       int m = obstacleGrid.length;
       int n = obstacleGrid[0].length;
       int[][] dp = new int[m][n];
-	  // 第一行/列障碍物之前的每个点的路径数为1，障碍物之后的为0
+      // 第一行/列障碍物之前的每个点的路径数为1，障碍物之后的为0
       for(int i = 0; i < n && obstacleGrid[0][i] == 0; i++){
           dp[0][i] = 1;
       }
@@ -27,9 +27,9 @@ class Solution {
       }
       for (int i = 1; i < m; i++) {
         for (int j = 1; j < n; j++) {
-	        // 障碍物的点不参与计算，默认为0。
+	    // 障碍物的点不参与计算，默认为0。
             if(obstacleGrid[i][j] == 0){
-				// 不是障碍物的点的路径数为其上点和其左点的路径和
+		// 不是障碍物的点的路径数为其上点和其左点的路径和
                 dp[i][j] = dp[i-1][j] + dp[i][j-1];
             }
         }
